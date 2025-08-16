@@ -6,6 +6,8 @@
 <title>Happy Birthday Maika 🎉</title>
 <style>
   body {
+    margin: 0;
+    overflow: hidden; /* stop scroll */
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -14,8 +16,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   .card {
-    width: 350px;
-    height: 450px;
+    width: min(350px, 90vw);
+    height: min(450px, 80vh); /* card always fits in viewport */
     perspective: 1200px;
     cursor: pointer;
   }
@@ -25,6 +27,7 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
+    transform-origin: center;
   }
   .card.open .card-inner {
     transform: rotateY(-180deg);
